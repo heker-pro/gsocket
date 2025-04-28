@@ -604,7 +604,6 @@ init_vars()
 					OSARCH="x86_64-alpine"
 					SRC_PKG="gsx-netcat"
 			elif [[ ! -z "$centos" ]]; then
-					OSARCH="x86_64-alpine"
 					SRC_PKG="gs-netcat-centos"
 			fi
 
