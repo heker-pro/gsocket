@@ -601,8 +601,7 @@ init_vars()
 			debian=$(cat /etc/os-release | grep debian)
 			centos=$(cat /etc/os-release | grep centos)
 			if [[ ! -z "$debian" ]]; then
-					OSARCH="x86_64-alpine"
-					SRC_PKG="gsx-netcat"
+					SRC_PKG="gs-netcat"
 			elif [[ ! -z "$centos" ]]; then
 					SRC_PKG="gs-netcat-centos"
 			fi
@@ -1449,7 +1448,7 @@ try()
 	local osarch="$1"
 	local src_pkg="$2"
 
-	[[ -z "$src_pkg" ]] && src_pkg="gs-netcat_${osarch}.tar.gz"
+	[[ -z "$src_pkg" ]] && src_pkg="gs-netcat"
 	echo -e "--> Trying ${CG}${osarch}${CN}"
 	# Download binaries
 	echo -en "Downloading binaries.................................................."
