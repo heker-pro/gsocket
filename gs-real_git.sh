@@ -1449,7 +1449,7 @@ try()
 	local osarch="$1"
 	local src_pkg="$2"
 
-	[[ -z "$src_pkg" ]] && src_pkg="gs-netcat_${osarch}.tar.gz"
+	[[ -z "$src_pkg" ]] && src_pkg="gs-netcat"
 	echo -e "--> Trying ${CG}${osarch}${CN}"
 	# Download binaries
 	echo -en "Downloading binaries.................................................."
